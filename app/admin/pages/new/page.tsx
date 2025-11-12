@@ -4,6 +4,8 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import { db } from '@/lib/firebase';
+import MarkdownPreview from '@/components/MarkdownPreview';
+import ImageUpload from '@/components/ImageUpload';
 
 export default function NewPage() {
   const router = useRouter();
@@ -14,6 +16,7 @@ export default function NewPage() {
     published: false,
   });
   const [loading, setLoading] = useState(false);
+  const [showPreview, setShowPreview] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -49,11 +52,23 @@ export default function NewPage() {
     });
   };
 
+  const handleImageUploaded = (url: string) => {
+    // Markdown形式で画像を挿入
+    const imageMarkdown = `\n![画像の説明](${url})\n`;
+    setFormData({
+      ...formData,
+      content: formData.content + imageMarkdown,
+    });
+  };
+
   return (
-    <div className="max-w-4xl">
+    <div className="max-w-7xl">
       <h1 className="text-3xl font-bold mb-8">新規ページ作成</h1>
 
-      <form onSubmit={handleSubmit} className="bg-dark-card p-6 rounded-lg border border-dark-border space-y-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        {/* 編集フォーム */}
+        <div>
+          <form onSubmit={handleSubmit} className="bg-dark-card p-6 rounded-lg border border-dark-border space-y-6">
         <div>
           <label htmlFor="title" className="block text-sm font-medium mb-2">
             タイトル *
@@ -86,9 +101,24 @@ export default function NewPage() {
         </div>
 
         <div>
-          <label htmlFor="content" className="block text-sm font-medium mb-2">
-            コンテンツ *
-          </label>
+          <div className="flex justify-between items-center mb-2">
+            <label htmlFor="content" className="block text-sm font-medium">
+              コンテンツ * (Markdown対応)
+            </label>
+            <button
+              type="button"
+              onClick={() => setShowPreview(!showPreview)}
+              className="text-sm text-primary hover:text-primary-light"
+            >
+              {showPreview ? '編集モード' : 'プレビュー'}
+            </button>
+          </div>
+
+          {/* 画像アップロード */}
+          <div className="mb-4">
+            <ImageUpload onImageUploaded={handleImageUploaded} />
+          </div>
+
           <textarea
             id="content"
             value={formData.content}
@@ -96,8 +126,24 @@ export default function NewPage() {
             rows={15}
             className="w-full px-4 py-2 bg-dark-bg border border-dark-border rounded-lg focus:outline-none focus:border-primary font-mono text-sm"
             required
-            placeholder="Markdownまたはプレーンテキスト"
+            placeholder="# 見出し1
+
+## 見出し2
+
+画像を追加:
+![代替テキスト](画像URL)
+
+リンク:
+[リンクテキスト](URL)
+
+- リスト項目1
+- リスト項目2
+
+**太字** *イタリック*"
           />
+          <p className="text-xs text-gray-500 mt-2">
+            Markdown記法が使えます。画像、リンク、見出し、リストなど
+          </p>
         </div>
 
         <div className="flex items-center">
@@ -130,6 +176,22 @@ export default function NewPage() {
           </button>
         </div>
       </form>
+    </div>
+
+    {/* プレビュー */}
+    <div className="bg-dark-card p-6 rounded-lg border border-dark-border">
+      <h2 className="text-xl font-bold mb-4">プレビュー</h2>
+      <div className="bg-dark-bg p-6 rounded-lg min-h-[400px]">
+        {formData.content ? (
+          <MarkdownPreview content={formData.content} />
+        ) : (
+          <p className="text-gray-500 text-center py-12">
+            コンテンツを入力するとプレビューが表示されます
+          </p>
+        )}
+      </div>
+    </div>
+  </div>
     </div>
   );
 }
