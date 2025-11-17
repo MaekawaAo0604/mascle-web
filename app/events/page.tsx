@@ -145,7 +145,7 @@ export default function Events() {
                     </p>
                     {event.id === 'mr-muscle-2025' ? (
                       <a
-                        href="https://readyfor.jp/projects/mrmuscle"
+                        href="https://livepocket.jp/e/z804d?utm_campaign=1000214&utm_content=evt&utm_medium=social&utm_source=COPY"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="mt-6 w-full py-3 px-6 bg-primary/20 hover:bg-primary text-white rounded-full transition-all duration-300 font-medium group-hover:glow block text-center"

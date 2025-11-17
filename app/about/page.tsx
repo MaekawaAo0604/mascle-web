@@ -94,18 +94,18 @@ export default function About() {
           </section>
 
           <section className="glass p-8 rounded-2xl">
-            <h2 className="text-2xl font-bold mb-4 gradient-text">参加方法</h2>
+            <h2 className="text-2xl font-bold mb-4 gradient-text">参加方法・チケット購入</h2>
             <p className="text-gray-300 leading-relaxed mb-6">
-              大会への参加、チケット購入、そしてクラウドファンディングによる支援は、
-              READYFORのプロジェクトページより受け付けております。
+              大会への参加、チケット購入は、LivePocketのイベントページより受け付けております。
+              観客チケットから出場者エントリーまで、各種チケットをご用意しています。
             </p>
             <a
-              href="https://readyfor.jp/projects/mrmuscle"
+              href="https://livepocket.jp/e/z804d?utm_campaign=1000214&utm_content=evt&utm_medium=social&utm_source=COPY"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block bg-primary hover:bg-primary-dark text-white font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 glow-hover"
             >
-              クラウドファンディング・チケット購入 →
+              チケット購入・出場エントリー →
             </a>
           </section>
 
