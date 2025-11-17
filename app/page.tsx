@@ -21,12 +21,12 @@ export default function Home() {
           <div className="container mx-auto px-4 text-center relative z-10">
             <div className="animate-fade-in">
               <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight">
-                <span className="gradient-text">大会名</span>
+                <span className="gradient-text">Mr.筋肉</span>
                 <br />
-                <span className="text-white">公式サイト</span>
+                <span className="text-white">クラブボディビルコンテスト</span>
               </h1>
               <p className="text-xl md:text-3xl text-gray-300 mb-12 max-w-3xl mx-auto animate-slide-up">
-                年に一度の最高峰の大会
+                世界初 フィジーク&ボディビル×ナイトクラブ
               </p>
               <div className="flex flex-col sm:flex-row gap-6 justify-center animate-slide-up" style={{ animationDelay: '0.2s' }}>
                 <Link
@@ -66,8 +66,8 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
                 {
-                  title: '最高峰の競技',
-                  desc: '各地域のトップ選手が集結する年に一度の大会',
+                  title: '世界初の試み',
+                  desc: 'フィジーク&ボディビルとナイトクラブが融合した革新的なイベント',
                   icon: (
                     <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
@@ -75,21 +75,20 @@ export default function Home() {
                   )
                 },
                 {
-                  title: '全国各地で開催',
-                  desc: '複数の地域で開催される大規模イベント',
+                  title: '六大学生が中心',
+                  desc: '今年は東京六大学の学生を中心に合同開催する特別な大会',
                   icon: (
                     <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
                     </svg>
                   )
                 },
                 {
-                  title: 'プロフェッショナル',
-                  desc: '経験豊富な審査員による公正な審査',
+                  title: '賞金総額30万円',
+                  desc: '優勝者には豪華賞金を用意。熱いバトルが繰り広げられます',
                   icon: (
                     <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   )
                 }

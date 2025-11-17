@@ -12,48 +12,101 @@ export default function About() {
         <div className="max-w-3xl mx-auto space-y-8">
           <section className="glass p-8 rounded-2xl">
             <h2 className="text-2xl font-bold mb-4 gradient-text">大会概要</h2>
+            <p className="text-gray-300 leading-relaxed mb-4">
+              Mr.筋肉クラブボディビルコンテストは、世界初となるフィジーク&ボディビルとナイトクラブが融合した革新的なイベントです。
+              従来のボディビル大会の枠を超え、クラブミュージックと照明演出の中で繰り広げられる、
+              これまでにないエンターテインメント性の高い大会を目指しています。
+            </p>
             <p className="text-gray-300 leading-relaxed">
-              当大会は、年に一度開催される最高峰の競技大会です。
-              各地域から選りすぐりの参加者が集まり、その技術と情熱を競い合います。
+              今年は東京六大学の学生を中心に合同開催し、若い世代のボディビル文化の発展と、
+              新しい形のスポーツエンターテインメントの創造を目指します。
             </p>
           </section>
 
           <section className="glass p-8 rounded-2xl">
-            <h2 className="text-2xl font-bold mb-6 gradient-text">大会の理念</h2>
+            <h2 className="text-2xl font-bold mb-6 gradient-text">開催情報</h2>
+            <div className="space-y-4 text-gray-300">
+              <div className="flex items-start group">
+                <svg className="w-5 h-5 text-primary mr-3 flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                <div>
+                  <span className="font-bold text-white">開催日時：</span>
+                  <span>2025年11月23日(日) 17:30〜21:30</span>
+                </div>
+              </div>
+              <div className="flex items-start group">
+                <svg className="w-5 h-5 text-primary mr-3 flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+                <div>
+                  <span className="font-bold text-white">会場：</span>
+                  <span>T2 SHINJUKU（東京・新宿）</span>
+                </div>
+              </div>
+              <div className="flex items-start group">
+                <svg className="w-5 h-5 text-primary mr-3 flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <div>
+                  <span className="font-bold text-white">賞金総額：</span>
+                  <span>300,000円</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section className="glass p-8 rounded-2xl">
+            <h2 className="text-2xl font-bold mb-6 gradient-text">大会の特徴</h2>
             <ul className="space-y-4 text-gray-300">
               <li className="flex items-start group">
                 <svg className="w-5 h-5 text-primary mr-3 flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-                <span>技術の向上と競技の発展</span>
+                <span>世界初のフィジーク&ボディビル×ナイトクラブの融合イベント</span>
               </li>
               <li className="flex items-start group">
                 <svg className="w-5 h-5 text-primary mr-3 flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-                <span>フェアプレー精神の推進</span>
+                <span>東京六大学の学生を中心とした合同開催</span>
               </li>
               <li className="flex items-start group">
                 <svg className="w-5 h-5 text-primary mr-3 flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-                <span>参加者同士の交流と絆の形成</span>
+                <span>豪華照明と音響によるエンターテインメント性の高い演出</span>
               </li>
               <li className="flex items-start group">
                 <svg className="w-5 h-5 text-primary mr-3 flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-                <span>地域コミュニティへの貢献</span>
+                <span>賞金総額30万円の本格的なコンペティション</span>
+              </li>
+              <li className="flex items-start group">
+                <svg className="w-5 h-5 text-primary mr-3 flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>観客も一体となって楽しめるナイトクラブスタイル</span>
               </li>
             </ul>
           </section>
 
           <section className="glass p-8 rounded-2xl">
-            <h2 className="text-2xl font-bold mb-4 gradient-text">開催地</h2>
-            <p className="text-gray-300 leading-relaxed">
-              全国各地で開催される地域大会と、それらの優勝者が集う全国大会を実施しています。
-              詳しい開催スケジュールは「イベント情報」ページをご確認ください。
+            <h2 className="text-2xl font-bold mb-4 gradient-text">参加方法</h2>
+            <p className="text-gray-300 leading-relaxed mb-6">
+              大会への参加、チケット購入、そしてクラウドファンディングによる支援は、
+              READYFORのプロジェクトページより受け付けております。
             </p>
+            <a
+              href="https://readyfor.jp/projects/mrmuscle"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-primary hover:bg-primary-dark text-white font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 glow-hover"
+            >
+              クラウドファンディング・チケット購入 →
+            </a>
           </section>
 
           <section className="glass p-8 rounded-2xl">

@@ -27,7 +27,7 @@ export default function Header() {
       <nav className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <Link href="/" className="text-2xl font-bold gradient-text hover:scale-105 transition-transform">
-            大会ロゴ
+            Mr.筋肉 2025
           </Link>
 
           {/* Desktop Menu */}
