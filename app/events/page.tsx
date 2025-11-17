@@ -5,6 +5,7 @@ import { collection, getDocs, query, orderBy } from 'firebase/firestore';
 import { db } from '@/lib/firebase';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import Link from 'next/link';
 import type { Event } from '@/lib/types';
 
 // メインイベント情報（固定）
@@ -14,7 +15,7 @@ const mainEvent: Event = {
   date: '2025-11-23T17:30:00',
   location: 'T2 SHINJUKU（東京・新宿）',
   description: '世界初!フィジーク&ボディビルとナイトクラブが融合した革新的なイベント。東京六大学の学生を中心に合同開催される本格的なコンペティション。賞金総額30万円、豪華照明と音響による最高のエンターテインメント体験をお届けします。',
-  imageUrl: '',
+  imageUrl: '/images/IMG_2397.jpeg',
   createdAt: new Date(),
   updatedAt: new Date(),
 };
@@ -143,20 +144,12 @@ export default function Events() {
                     <p className="text-gray-400 leading-relaxed line-clamp-3">
                       {event.description}
                     </p>
-                    {event.id === 'mr-muscle-2025' ? (
-                      <a
-                        href="https://livepocket.jp/e/z804d?utm_campaign=1000214&utm_content=evt&utm_medium=social&utm_source=COPY"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="mt-6 w-full py-3 px-6 bg-primary/20 hover:bg-primary text-white rounded-full transition-all duration-300 font-medium group-hover:glow block text-center"
-                      >
-                        チケット購入・詳細を見る →
-                      </a>
-                    ) : (
-                      <button className="mt-6 w-full py-3 px-6 bg-primary/20 hover:bg-primary text-white rounded-full transition-all duration-300 font-medium group-hover:glow">
-                        詳細を見る
-                      </button>
-                    )}
+                    <Link
+                      href={`/events/${event.id}`}
+                      className="mt-6 w-full py-3 px-6 bg-primary/20 hover:bg-primary text-white rounded-full transition-all duration-300 font-medium group-hover:glow block text-center"
+                    >
+                      詳細を見る →
+                    </Link>
                   </div>
                 </div>
               ))}
