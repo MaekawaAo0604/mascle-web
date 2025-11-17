@@ -7,6 +7,18 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import type { Event } from '@/lib/types';
 
+// メインイベント情報（固定）
+const mainEvent: Event = {
+  id: 'mr-muscle-2025',
+  title: 'Mr.筋肉 クラブボディビルコンテスト 2025',
+  date: '2025-11-23T17:30:00',
+  location: 'T2 SHINJUKU（東京・新宿）',
+  description: '世界初!フィジーク&ボディビルとナイトクラブが融合した革新的なイベント。東京六大学の学生を中心に合同開催される本格的なコンペティション。賞金総額30万円、豪華照明と音響による最高のエンターテインメント体験をお届けします。',
+  imageUrl: '',
+  createdAt: new Date(),
+  updatedAt: new Date(),
+};
+
 export default function Events() {
   const [events, setEvents] = useState<Event[]>([]);
   const [loading, setLoading] = useState(true);
@@ -20,9 +32,16 @@ export default function Events() {
           id: doc.id,
           ...doc.data(),
         })) as Event[];
-        setEvents(eventsData);
+
+        // メインイベントと取得したイベントを結合
+        const allEvents = [mainEvent, ...eventsData].sort((a, b) =>
+          new Date(a.date).getTime() - new Date(b.date).getTime()
+        );
+        setEvents(allEvents);
       } catch (error) {
         console.error('イベント取得エラー:', error);
+        // エラーが発生してもメインイベントは表示
+        setEvents([mainEvent]);
       } finally {
         setLoading(false);
       }
@@ -124,9 +143,20 @@ export default function Events() {
                     <p className="text-gray-400 leading-relaxed line-clamp-3">
                       {event.description}
                     </p>
-                    <button className="mt-6 w-full py-3 px-6 bg-primary/20 hover:bg-primary text-white rounded-full transition-all duration-300 font-medium group-hover:glow">
-                      詳細を見る
-                    </button>
+                    {event.id === 'mr-muscle-2025' ? (
+                      <a
+                        href="https://readyfor.jp/projects/mrmuscle"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-6 w-full py-3 px-6 bg-primary/20 hover:bg-primary text-white rounded-full transition-all duration-300 font-medium group-hover:glow block text-center"
+                      >
+                        チケット購入・詳細を見る →
+                      </a>
+                    ) : (
+                      <button className="mt-6 w-full py-3 px-6 bg-primary/20 hover:bg-primary text-white rounded-full transition-all duration-300 font-medium group-hover:glow">
+                        詳細を見る
+                      </button>
+                    )}
                   </div>
                 </div>
               ))}
