@@ -161,40 +161,16 @@ export default function EventDetail() {
               {/* タイムスケジュール */}
               <div className="glass p-8 rounded-2xl">
                 <h2 className="text-3xl font-bold mb-6 gradient-text">タイムスケジュール</h2>
-                <div className="space-y-2">
+                <div className="space-y-4">
                   {[
-                    { time: '18:00', event: 'フロアオープン' },
-                    { time: '19:00', event: '開会' },
-                    { time: '19:03', event: 'オープニングパフォーマンス' },
-                    { time: '19:14', event: '予選審査' },
-                    { time: '19:14', event: 'メンズフィジーク 5名' },
-                    { time: '19:24', event: '女子フィジーク 2名' },
-                    { time: '19:29', event: 'フリーポーズ 4名' },
-                    { time: '19:37', event: '男子フィットネスモデル 3名' },
-                    { time: '19:43', event: 'ビキニ 6名' },
-                    { time: '19:55', event: '休憩 10分' },
-                    { time: '20:05', event: 'ゲストポーザー' },
-                    { time: '20:15', event: '休憩 10分' },
-                    { time: '20:25', event: '決勝審査' },
-                    { time: '20:25', event: 'メンズフィジーク' },
-                    { time: '20:31', event: '女子フィジーク' },
-                    { time: '20:35', event: 'フリーポーズ' },
-                    { time: '20:41', event: '男子フィットネスモデル' },
-                    { time: '20:45', event: 'ビキニ' },
-                    { time: '20:53', event: '休憩 10分' },
-                    { time: '21:03', event: '表彰' },
-                    { time: '21:03', event: 'メンズフィジーク' },
-                    { time: '21:06', event: '女子フィジーク' },
-                    { time: '21:09', event: 'フリーポーズ' },
-                    { time: '21:12', event: '男子フィットネスモデル' },
-                    { time: '21:15', event: 'ビキニ' },
-                    { time: '21:18', event: 'オーバーオール' },
-                    { time: '21:27', event: '閉会' }
+                    { time: '17:30', event: '開場' },
+                    { time: '19:00', event: '開演' },
+                    { time: '21:30', event: '終了' }
                   ].map((item, index) => (
-                    <div key={index} className="flex items-center gap-4 p-3 rounded-lg bg-white/5 hover:bg-white/10 transition-all">
-                      <div className="text-primary font-bold text-lg min-w-[70px]">{item.time}</div>
+                    <div key={index} className="flex items-center gap-4 p-4 rounded-lg bg-white/5 hover:bg-white/10 transition-all">
+                      <div className="text-primary font-bold text-2xl min-w-[100px]">{item.time}</div>
                       <div className="flex-grow h-px bg-gradient-to-r from-primary/50 to-transparent"></div>
-                      <div className="text-gray-300 text-sm">{item.event}</div>
+                      <div className="text-gray-300 text-lg">{item.event}</div>
                     </div>
                   ))}
                 </div>
