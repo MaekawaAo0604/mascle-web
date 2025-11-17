@@ -163,10 +163,7 @@ export default function EventDetail() {
                 <h2 className="text-3xl font-bold mb-6 gradient-text">タイムスケジュール</h2>
                 <div className="space-y-2">
                   {[
-                    { time: '16:00', event: 'お酒搬入開始' },
-                    { time: '17:30', event: 'お客様入場開始' },
                     { time: '18:00', event: 'フロアオープン' },
-                    { time: '18:45', event: '【本番前リハーサル】' },
                     { time: '19:00', event: '開会' },
                     { time: '19:03', event: 'オープニングパフォーマンス' },
                     { time: '19:14', event: '予選審査' },
@@ -192,8 +189,7 @@ export default function EventDetail() {
                     { time: '21:12', event: '男子フィットネスモデル' },
                     { time: '21:15', event: 'ビキニ' },
                     { time: '21:18', event: 'オーバーオール' },
-                    { time: '21:27', event: '閉会' },
-                    { time: '21:30', event: '撤収' }
+                    { time: '21:27', event: '閉会' }
                   ].map((item, index) => (
                     <div key={index} className="flex items-center gap-4 p-3 rounded-lg bg-white/5 hover:bg-white/10 transition-all">
                       <div className="text-primary font-bold text-lg min-w-[70px]">{item.time}</div>
